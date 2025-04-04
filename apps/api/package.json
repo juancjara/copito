@@ -5,7 +5,8 @@
     "dev": "env-cmd -f .env tsx watch src/index.ts",
     "db:generate": "tsx ./node_modules/drizzle-kit/bin.cjs generate",
     "db:migrate": "env-cmd -f .env tsx ./node_modules/drizzle-kit/bin.cjs migrate",
-    "db:studio": "env-cmd -f .env tsx ./node_modules/drizzle-kit/bin.cjs studio"
+    "db:studio": "env-cmd -f .env tsx ./node_modules/drizzle-kit/bin.cjs studio",
+    "build": "tsc --build"
   },
   "dependencies": {
     "@hono/node-server": "^1.14.0",

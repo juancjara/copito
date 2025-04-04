@@ -6,8 +6,9 @@ import { z } from "zod";
 export const recordingsRouter = new Hono()
   .get("/", async (c) => {
     const recordings = await recordingsService.getAll();
+    console.log("called");
     return c.json({
-      data: recordings,
+      data: [],
     });
   })
   .post(

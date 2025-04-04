@@ -68,6 +68,12 @@ importers:
       '@wavesurfer/react':
         specifier: ^1.0.10
         version: 1.0.10(react@19.1.0)(wavesurfer.js@7.9.4)
+      api:
+        specifier: workspace:*
+        version: link:../api
+      hono:
+        specifier: ^4.7.5
+        version: 4.7.5
       next:
         specifier: 15.2.4
         version: 15.2.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
