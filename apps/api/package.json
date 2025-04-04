@@ -2,10 +2,10 @@
   "name": "api",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate",
-    "db:studio": "drizzle-kit studio"
+    "dev": "env-cmd -f .env tsx watch src/index.ts",
+    "db:generate": "tsx ./node_modules/drizzle-kit/bin.cjs generate",
+    "db:migrate": "env-cmd -f .env tsx ./node_modules/drizzle-kit/bin.cjs migrate",
+    "db:studio": "env-cmd -f .env tsx ./node_modules/drizzle-kit/bin.cjs studio"
   },
   "dependencies": {
     "@hono/node-server": "^1.14.0",
@@ -19,6 +19,7 @@
     "@types/node": "^20.11.17",
     "@types/pg": "^8.11.11",
     "drizzle-kit": "^0.30.6",
+    "env-cmd": "^10.1.0",
     "tsx": "^4.19.3"
   }
 }

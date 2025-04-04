@@ -1,17 +1,10 @@
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
-import * as dotenv from "dotenv";
-
-dotenv.config();
-
-import sampleRouter from "./routes/sample.js";
-import { script } from "./services/script.js";
+import { recordingsRouter } from "./routes/recordings.js";
 
 const app = new Hono();
 
-app.route("/sample", sampleRouter);
-
-script();
+app.route("/recordings", recordingsRouter);
 
 serve(
   {

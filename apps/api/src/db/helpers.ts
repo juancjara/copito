@@ -1,7 +1,7 @@
-import { pgTable, timestamp } from "drizzle-orm/pg-core";
+import { timestamp } from "drizzle-orm/pg-core";
 
 export const timestamps = {
-  updated_at: timestamp().defaultNow().notNull(),
-  created_at: timestamp().defaultNow().notNull(),
-  deleted_at: timestamp(),
+  updatedAt: timestamp().defaultNow().notNull(),
+  createdAt: timestamp().defaultNow().notNull(),
+  deletedAt: timestamp(),
 };
