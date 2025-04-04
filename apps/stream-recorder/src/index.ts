@@ -3,27 +3,40 @@ import fs from "fs";
 
 // TODO get URL and timeout from parameters
 const url = "https://mdstrm.com/audio/5fab3416b5f9ef165cfab6e9/icecast.audio";
-//const timeout = 120 * 60 * 1000;
-const timeout = 1 * 60 * 1000;
+const timeout = 60 * 60 * 1000;
+//const timeout = 1 * 60 * 1000;
 
 let timeoutId: NodeJS.Timeout;
 
 const main = async () => {
   try {
+    console.log("Attempting to connect to stream:", url);
     const response = await axios({
       method: "get",
       url,
       responseType: "stream",
     });
 
-    const fileStream = fs.createWriteStream(`${new Date().toISOString()}.aac`);
+    console.log("Stream connected successfully");
+    const filename = `${new Date().toISOString()}.aac`;
+    const fileStream = fs.createWriteStream(filename);
+
+    response.data.on("data", (chunk: Buffer) => {
+      console.log(`Received ${chunk.length} bytes of data`);
+    });
+
+    response.data.on("error", (err: Error) => {
+      console.error("Stream error:", err);
+    });
 
     response.data.pipe(fileStream);
 
-    console.log("started");
+    console.log("Started recording to file:", filename);
+
+    // Wait for the timeout to complete
     await new Promise<void>((resolve) => {
       timeoutId = setTimeout(() => {
-        console.log("ended");
+        console.log("Recording timeout reached");
         fileStream.end();
         response.data.destroy();
         resolve();
@@ -31,18 +44,18 @@ const main = async () => {
     });
   } catch (error) {
     if (error instanceof AxiosError) {
-      console.error(error.message);
+      console.error("Axios error:", error.message);
       if (error.response) {
-        console.error(error.response.status);
-        console.error(error.response.headers);
+        console.error("Response status:", error.response.status);
+        console.error("Response headers:", error.response.headers);
       }
     } else {
-      console.error(error);
+      console.error("Unexpected error:", error);
     }
   } finally {
-    console.log("end of script");
+    console.log("End of script");
+    clearTimeout(timeoutId);
   }
 };
 
-// Properly await the main function
-main().catch(console.error);
+main();
