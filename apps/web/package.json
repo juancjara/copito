@@ -2,6 +2,7 @@
   "name": "web",
   "version": "0.1.0",
   "private": true,
+  "types": "src/index.ts",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,6 +11,8 @@
   },
   "dependencies": {
     "@wavesurfer/react": "^1.0.10",
+    "api": "workspace:*",
+    "hono": "^4.7.5",
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
