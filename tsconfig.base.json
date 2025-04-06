@@ -15,7 +15,7 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "checkJs": true,
-    "noEmit": true
+    "noEmit": true,
 
     /** Keep TSC performant in monorepos */
     /*"incremental": true,
@@ -42,7 +42,7 @@
     //"lib": ["es2022", "dom", "dom.iterable"],
 
     /* If your code doesn't run in the DOM: */
-    //"lib": ["es2022"]
+    "lib": ["es2022"]
   },
   "exclude": ["node_modules", "build", "dist", ".next", ".expo"]
 }

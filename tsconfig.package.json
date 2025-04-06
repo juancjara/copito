@@ -5,7 +5,9 @@
     "composite": true,
     "sourceMap": true,
     "declarationMap": true,
-    "noEmit": false
+    "noEmit": false,
+
+    "moduleResolution": "nodenext"
     /*
     FROM https://github.com/t3-oss/create-t3-turbo/blob/main/tooling/typescript/internal-package.json
     "noEmit": false,
