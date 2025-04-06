@@ -2,7 +2,7 @@
   "name": "api",
   "type": "module",
   "scripts": {
-    "dev": "env-cmd -f .env tsx watch src/index.ts",
+    "dev2": "env-cmd -f .env tsx watch src/index.ts",
     "db:generate": "tsx ./node_modules/drizzle-kit/bin.cjs generate",
     "db:migrate": "env-cmd -f .env tsx ./node_modules/drizzle-kit/bin.cjs migrate",
     "db:studio": "env-cmd -f .env tsx ./node_modules/drizzle-kit/bin.cjs studio"
