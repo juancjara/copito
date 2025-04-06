@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "declaration": true,
+    "composite": true,
+    "sourceMap": true,
+    "declarationMap": true,
+    "noEmit": false
+    /*
+    FROM https://github.com/t3-oss/create-t3-turbo/blob/main/tooling/typescript/internal-package.json
+    "noEmit": false,
+    "outDir": "${configDir}/dist"
+    */
+  }
+}
