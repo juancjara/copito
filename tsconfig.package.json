@@ -6,12 +6,8 @@
     "sourceMap": true,
     "declarationMap": true,
     "noEmit": false,
-
-    "moduleResolution": "nodenext"
-    /*
-    FROM https://github.com/t3-oss/create-t3-turbo/blob/main/tooling/typescript/internal-package.json
-    "noEmit": false,
-    "outDir": "${configDir}/dist"
-    */
+    "outDir": "${configDir}/dist",
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext"
   }
 }
