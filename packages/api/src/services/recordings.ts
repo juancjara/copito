@@ -1,12 +1,12 @@
 import { eq, desc } from "drizzle-orm";
 import { db } from "../db/connection.js";
-import { recordings } from "../db/schema/recordings.js";
+import { recordings } from "../db/schema/index.js";
 
 const getAll = async () => {
   return db.select().from(recordings).orderBy(desc(recordings.createdAt));
 };
 
-const create = async ({
+export const create = async ({
   radioName,
   streamUrl,
   fileName,

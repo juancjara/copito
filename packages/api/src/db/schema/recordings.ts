@@ -18,3 +18,5 @@ export const recordings = pgTable("recordings", {
   status: statusEnum("status").notNull().default("pending"),
   ...timestamps,
 });
+
+export type Recordings = typeof recordings.$inferSelect;

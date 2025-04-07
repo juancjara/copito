@@ -12,16 +12,27 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc",
-    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
+    "db:generate": "tsx ./node_modules/drizzle-kit/bin.cjs generate",
+    "db:migrate": "env-cmd -f .env pnpm drizzle-kit migrate",
+    "db:studio": "env-cmd -f .env tsx ./node_modules/drizzle-kit/bin.cjs studio"
   },
   "dependencies": {
     "@trpc/server": "^11.0.2",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.41.0",
+    "pg": "^8.14.1",
     "superjson": "^2.2.2",
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/pg": "^8.11.11",
+    "drizzle-kit": "^0.30.6",
+    "env-cmd": "^10.1.0",
     "eslint": "^9",
     "prettier": "^3.5.3",
+    "tsx": "^4.19.3",
     "typescript": "^5"
   }
 }

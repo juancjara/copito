@@ -86,6 +86,9 @@ importers:
       client-only:
         specifier: ^0.0.1
         version: 0.0.1
+      env-cmd:
+        specifier: ^10.1.0
+        version: 10.1.0
       next:
         specifier: 15.2.4
         version: 15.2.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -141,6 +144,15 @@ importers:
       '@trpc/server':
         specifier: ^11.0.2
         version: 11.0.2(typescript@5.8.2)
+      dotenv:
+        specifier: ^16.4.7
+        version: 16.4.7
+      drizzle-orm:
+        specifier: ^0.41.0
+        version: 0.41.0(@types/pg@8.11.11)(gel@2.0.1)(pg@8.14.1)
+      pg:
+        specifier: ^8.14.1
+        version: 8.14.1
       superjson:
         specifier: ^2.2.2
         version: 2.2.2
@@ -148,12 +160,61 @@ importers:
         specifier: ^3.24.2
         version: 3.24.2
     devDependencies:
+      '@types/node':
+        specifier: ^22.14.0
+        version: 22.14.0
+      '@types/pg':
+        specifier: ^8.11.11
+        version: 8.11.11
+      drizzle-kit:
+        specifier: ^0.30.6
+        version: 0.30.6
+      env-cmd:
+        specifier: ^10.1.0
+        version: 10.1.0
       eslint:
         specifier: ^9
         version: 9.23.0(jiti@2.4.2)
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
+      tsx:
+        specifier: ^4.19.3
+        version: 4.19.3
+      typescript:
+        specifier: ^5
+        version: 5.8.2
+
+  packages/db:
+    dependencies:
+      drizzle-orm:
+        specifier: ^0.41.0
+        version: 0.41.0(@types/pg@8.11.11)(gel@2.0.1)(pg@8.14.1)
+      pg:
+        specifier: ^8.14.1
+        version: 8.14.1
+    devDependencies:
+      '@types/node':
+        specifier: ^22.14.0
+        version: 22.14.0
+      '@types/pg':
+        specifier: ^8.11.11
+        version: 8.11.11
+      drizzle-kit:
+        specifier: ^0.30.6
+        version: 0.30.6
+      env-cmd:
+        specifier: ^10.1.0
+        version: 10.1.0
+      eslint:
+        specifier: ^9
+        version: 9.23.0(jiti@2.4.2)
+      prettier:
+        specifier: ^3.5.3
+        version: 3.5.3
+      tsx:
+        specifier: ^4.19.3
+        version: 4.19.3
       typescript:
         specifier: ^5
         version: 5.8.2
@@ -3169,7 +3230,7 @@ snapshots:
 
   '@types/pg@8.11.11':
     dependencies:
-      '@types/node': 20.17.30
+      '@types/node': 22.14.0
       pg-protocol: 1.8.0
       pg-types: 4.0.2
 

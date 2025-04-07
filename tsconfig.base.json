@@ -31,7 +31,13 @@
     //"lib": ["es2022", "dom", "dom.iterable"],
 
     /* If your code doesn't run in the DOM: */
-    "lib": ["es2022"]
+    "lib": ["es2022"],
+
+    /* Paths */
+    "paths": {
+      "@copito/db": ["../../packages/db/src"],
+      "@copito/api": ["../../packages/api/src"]
+    }
   },
   "exclude": ["node_modules", "build", "dist", ".next", ".expo"]
 }

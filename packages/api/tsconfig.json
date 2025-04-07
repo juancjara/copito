@@ -1,5 +1,9 @@
 {
   "extends": "../../tsconfig.package.json",
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*", "*.ts"],
+  "exclude": ["node_modules", "dist"],
+  "compilerOptions": {
+    "isolatedModules": false,
+    "skipLibCheck": true
+  }
 }

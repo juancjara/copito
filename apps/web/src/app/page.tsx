@@ -4,8 +4,8 @@ import { trpc } from '../trpc/react'
 
 
 export default function Home() {
-  const { data } = trpc.hello.getUser.useQuery();
-  console.log('data', data?.id)
+  const { data } = trpc.recordings.getAll.useQuery();
+  console.log("data", data?.[0]?.fileName);
 
   return (
     <div className="">

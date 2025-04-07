@@ -10,10 +10,7 @@
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@copito/api": ["../../packages/api/src"]
-    }
+    ]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"]
 }

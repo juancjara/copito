@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 import type { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
 
 import type { AppRouter } from "./root.js";
