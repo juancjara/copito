@@ -15,11 +15,16 @@ export const create = async ({
   streamUrl: string;
   fileName: string;
 }) => {
-  return db.insert(recordings).values({
-    radioName,
-    streamUrl,
-    fileName,
-  });
+  const [newRecording] = await db
+    .insert(recordings)
+    .values({
+      radioName,
+      streamUrl,
+      fileName,
+    })
+    .returning();
+
+  return newRecording;
 };
 
 const updateById = async (

@@ -8,57 +8,26 @@ importers:
 
   .: {}
 
-  apps/api:
-    dependencies:
-      '@hono/node-server':
-        specifier: ^1.14.0
-        version: 1.14.0(hono@4.7.5)
-      '@hono/zod-validator':
-        specifier: ^0.4.3
-        version: 0.4.3(hono@4.7.5)(zod@3.24.2)
-      axios:
-        specifier: ^1.8.4
-        version: 1.8.4
-      dotenv:
-        specifier: ^16.4.7
-        version: 16.4.7
-      drizzle-orm:
-        specifier: ^0.41.0
-        version: 0.41.0(@types/pg@8.11.11)(gel@2.0.1)(pg@8.14.1)
-      hono:
-        specifier: ^4.7.5
-        version: 4.7.5
-      pg:
-        specifier: ^8.14.1
-        version: 8.14.1
-      zod:
-        specifier: ^3.24.2
-        version: 3.24.2
-    devDependencies:
-      '@types/node':
-        specifier: ^20.11.17
-        version: 20.17.30
-      '@types/pg':
-        specifier: ^8.11.11
-        version: 8.11.11
-      drizzle-kit:
-        specifier: ^0.30.6
-        version: 0.30.6
-      env-cmd:
-        specifier: ^10.1.0
-        version: 10.1.0
-      tsx:
-        specifier: ^4.19.3
-        version: 4.19.3
-
   apps/stream-recorder:
     dependencies:
+      '@copito/api':
+        specifier: workspace:*
+        version: link:../../packages/api
+      '@trpc/client':
+        specifier: ^11.0.2
+        version: 11.0.2(@trpc/server@11.0.2(typescript@5.8.2))(typescript@5.8.2)
+      '@trpc/server':
+        specifier: ^11.0.2
+        version: 11.0.2(typescript@5.8.2)
       '@types/node':
         specifier: ^22.14.0
         version: 22.14.0
       axios:
         specifier: ^1.8.4
         version: 1.8.4
+      superjson:
+        specifier: ^2.2.2
+        version: 2.2.2
       tsx:
         specifier: ^4.19.3
         version: 4.19.3
@@ -159,40 +128,6 @@ importers:
       zod:
         specifier: ^3.24.2
         version: 3.24.2
-    devDependencies:
-      '@types/node':
-        specifier: ^22.14.0
-        version: 22.14.0
-      '@types/pg':
-        specifier: ^8.11.11
-        version: 8.11.11
-      drizzle-kit:
-        specifier: ^0.30.6
-        version: 0.30.6
-      env-cmd:
-        specifier: ^10.1.0
-        version: 10.1.0
-      eslint:
-        specifier: ^9
-        version: 9.23.0(jiti@2.4.2)
-      prettier:
-        specifier: ^3.5.3
-        version: 3.5.3
-      tsx:
-        specifier: ^4.19.3
-        version: 4.19.3
-      typescript:
-        specifier: ^5
-        version: 5.8.2
-
-  packages/db:
-    dependencies:
-      drizzle-orm:
-        specifier: ^0.41.0
-        version: 0.41.0(@types/pg@8.11.11)(gel@2.0.1)(pg@8.14.1)
-      pg:
-        specifier: ^8.14.1
-        version: 8.14.1
     devDependencies:
       '@types/node':
         specifier: ^22.14.0
@@ -706,18 +641,6 @@ packages:
   '@eslint/plugin-kit@0.2.8':
     resolution: {integrity: sha512-ZAoA40rNMPwSm+AeHpCq8STiNAwzWLJuP8Xv4CHIc9wv/PSuExjMrmjfYNj682vW0OOiZ1HKxzvjQr9XZIisQA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@hono/node-server@1.14.0':
-    resolution: {integrity: sha512-YUCxJwgHRKSqjrdTk9e4VMGKN27MK5r4+MGPyZTgKH+IYbK+KtYbHeOcPGJ91KGGD6RIQiz2dAHxvjauNhOS8g==}
-    engines: {node: '>=18.14.1'}
-    peerDependencies:
-      hono: ^4
-
-  '@hono/zod-validator@0.4.3':
-    resolution: {integrity: sha512-xIgMYXDyJ4Hj6ekm9T9Y27s080Nl9NXHcJkOvkXPhubOLj8hZkOL8pDnnXfvCf5xEE8Q4oMFenQUZZREUY2gqQ==}
-    peerDependencies:
-      hono: '>=3.9.0'
-      zod: ^3.19.1
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1853,10 +1776,6 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
-  hono@4.7.5:
-    resolution: {integrity: sha512-fDOK5W2C1vZACsgLONigdZTRZxuBqFtcKh7bUQ5cVSbwI2RWjloJDcgFOVzbQrlI6pCmhlTsVYZ7zpLj4m4qMQ==}
-    engines: {node: '>=16.9.0'}
-
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
@@ -2961,15 +2880,6 @@ snapshots:
     dependencies:
       '@eslint/core': 0.13.0
       levn: 0.4.1
-
-  '@hono/node-server@1.14.0(hono@4.7.5)':
-    dependencies:
-      hono: 4.7.5
-
-  '@hono/zod-validator@0.4.3(hono@4.7.5)(zod@3.24.2)':
-    dependencies:
-      hono: 4.7.5
-      zod: 3.24.2
 
   '@humanfs/core@0.19.1': {}
 
@@ -4197,8 +4107,6 @@ snapshots:
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
-
-  hono@4.7.5: {}
 
   ignore@5.3.2: {}
 
